@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+        }
+
+        .model-selection {
+            width: 20%;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+
+        .model-selection button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .model-selection button:hover {
+            background-color: #3e8e41;
+        }
+
+        .camera-feed {
+            width: 60%;
+            padding: 20px;
+        }
+
+        .camera-feed img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .prompt-box {
+            width: 20%;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-left: 1px solid #ddd;
+        }
+
+        .prompt-box textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="model-selection">
+            <button onclick="selectModel('numerical1')">Model 1</button>
+            <button onclick="selectModel('onehand2')">Model 2</button>
+        </div>
+        <div class="camera-feed">
+            <img id="frame" src="" style="width: 100%; height: 100vh; object-fit: cover;" />
+        </div>
+        <div class="prompt-box">
+            <textarea id="prompt" placeholder="Enter prompt"></textarea>
+        </div>
+    </div>
+
+    <script>
+        function selectModel(model) {
+            document.getElementById("frame").src = `/${model}`;
+        }
+    </script>
+</body>
+</html>
+
+
